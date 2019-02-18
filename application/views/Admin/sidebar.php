@@ -20,8 +20,8 @@
                                 <i class="fas fa-table"></i>Lessons</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Video</a>
+                            <a href="upload">
+                                <i class="far fa-check-square"></i>Add Teacher</a>
                         </li>
                         <li>
                             <a href="#">

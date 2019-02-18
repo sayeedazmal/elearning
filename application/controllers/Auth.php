@@ -15,7 +15,6 @@
 		 	$data['footer_content'] = $this->load->view('pages/footer','',true);
 		 	
 
-		 	
 		 	$this->load->view('register',$data);
 
 		 }

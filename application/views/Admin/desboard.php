@@ -92,6 +92,10 @@
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Announce</a>
                         </li>
+                        <li>
+                            <a href="upload">
+                                <i class="fas fa-map-marker-alt"></i>Add Teacher</a>
+                        </li>
                        
                        
                     </ul>
@@ -165,7 +169,7 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                      <div class="row">
+                        <div class="row">
                          <div class="col-lg-2">
                           <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                 <span id="payment-button-amount">Add Course</span>

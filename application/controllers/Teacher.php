@@ -14,4 +14,7 @@ public function home()
 		  $this->load->view('teachers',$data);
 	}
 
+
+	
+
 }
