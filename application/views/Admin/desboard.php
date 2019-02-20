@@ -73,7 +73,7 @@
                          
                         </li>
                         <li>
-                            <a href="<?=site_url('admin')?>">
+                            <a href="<?=site_url('admin/viewcourese')?>">
                                 <i class="fas fa-chart-bar"></i>Course</a>
                         </li>
                         <li>
@@ -93,7 +93,7 @@
                                 <i class="fas fa-map-marker-alt"></i>Announce</a>
                         </li>
                         <li>
-                            <a href="upload">
+                            <a href="viewteacher">
                                 <i class="fas fa-map-marker-alt"></i>Add Teacher</a>
                         </li>
                        

@@ -6,8 +6,7 @@ class Teacher_model extends CI_Model {
 
 	
 	
-	function fetch_data(){
-
+	function teacher_data(){
         $query = $this->db->get('teacher');//get data
 		return $query ; 
 	}

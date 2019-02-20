@@ -34,7 +34,7 @@
 						<div class="search_background" style="background-image:url(<?php echo base_url()?>assets/images/search_background.jpg);"></div>
 						<div class="search_content text-center" style="margin-top: 100px">
 							<h1 class="search_title">Please continue your Registration</h1>
-							 <form method="POST" id="search_form" class="search_form" action="<?=site_url("upload/do_upload");?>" enctype="multipart/form-data" >
+							 <form method="POST"  class="search_form" action="<?=site_url("upload/do_upload");?>" enctype="multipart/form-data" >
 
 								<input id="techer-name" name="techname" class="input_field search_form_name" type="text" placeholder="techer name" required="required" data-error="Course name is required.">
 								<input id="designation" name="designation" class="input_field search_form_category" type="text" placeholder="designation">
@@ -50,76 +50,8 @@
 		</div>
 	</div>
 </div>
-    
-
-			<div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container">
-                       <div class="row">
-                      
-                       </div>
-                        <div class="row">
-                          
-                            <div class="col-lg-12">
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Teacher name</th>
-                                                <th>Designation</th>
-                                                <th>Picture</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
- 
-				      <?php
-                    if($fetch_data->num_rows() > 0){
-                        foreach ($fetch_data->result() as $row) {
-                          ?>
-                            <tr>
-                              <td><?php echo $row->tech_id ?></td>
-                                <td><?php echo $row->techname ?></td>
-                                <td><?php echo $row->designation ?></td>
-                                <td>
-                                 <img src="<?php echo base_url("".$row->picture)?>" style="width: 100px; height: 100px"  >
-                               
-                                  </td>
-                                 
-                                  <td>    
-                                   <a href="">
-                                     <button type="button" class="btn btn-primary" >
-                                        <i class="fas fa-edit"></i>
-                                      </button>
-                                   </a> 
-                                   <a href="<?=site_url("upload/delete/").$row->tech_id ?>">
-                                      <button type="button" class="btn btn-danger">
-                                          <i class="fa fa-trash" aria-hidden="true"></i>
-                                      </button>
-                                   </a>
-
-                                </td>
-                                
-                            </tr>
-                          <?php
-                        }
-
-                    }
-                  ?>
-
-                                       </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            
-                        </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>			
-    </body>
+    	
+</body>
 
     
 <script src="<?php echo base_url()?>assets/js/jquery-3.2.1.min.js"></script>

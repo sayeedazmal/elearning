@@ -1,6 +1,6 @@
                 <div class="row">
                          <div class="col-lg-2">
-                           <a href="admin/addcourse"> <button id="payment-button"  type="submit" class="btn btn-lg btn-info btn-block">
+                           <a href="addcourse"> <button id="payment-button"  type="submit" class="btn btn-lg btn-info btn-block">
                                 <span id="payment-button-amount">Add Course</span>
                                 
                             </button></a>

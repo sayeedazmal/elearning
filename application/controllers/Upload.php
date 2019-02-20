@@ -6,20 +6,12 @@ class Upload extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->helper(array('form', 'url'));
-                $this->load->model('teacher_model','', TRUE);
                 $this->load->library('session');
                 
         }
 
 
-        public function index()
-        {
-        	 $data = array();
-        	 $data['fetch_data'] = $this->teacher_model->fetch_data();
-             $this->load->view('admin/add_teacher',$data);
-        }
-
-
+     
 		//file upload function
         public function do_upload()
         {
@@ -31,10 +23,10 @@ class Upload extends CI_Controller {
         	$sdata = array();
 
                 $config['upload_path']          = 'uploads/';
-                $config['allowed_types']        = 'gif|jpg|png|pdf';
-                $config['max_size']             = 100;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 768;
+                $config['allowed_types']        = 'gif|jpg|png|pdf|doc|docx|ppt|pptx';
+                $config['max_size']             = 100024;
+                // $config['max_width']            = 100024;
+                // $config['max_height']           = 7680;
 
                 $this->load->library('upload', $config);
 
@@ -49,21 +41,10 @@ class Upload extends CI_Controller {
 
                 $this->db->insert('teacher',$data);
 
-                redirect('upload');
+                redirect('admin/viewteacher');
         }
 
 
-    	 //delete function for teacher controller the teacher_model is Model delete function is mathode name 
-	 	function delete($id)
-		 {
-				 if ($this->teacher_model->delete($id)) {
-						 $this->session->set_flashdata('success', "Course has been deleted successfully");
-						 redirect('/upload/');
-				 } else {
-						 $this->session->set_flashdata('warning', "Something is going wrong!");
-						 redirect('/upload/');
-				 }
-		 }
        
 }
 ?>
