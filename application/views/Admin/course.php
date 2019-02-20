@@ -1,9 +1,9 @@
-<div class="row">
+                <div class="row">
                          <div class="col-lg-2">
-                          <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                           <a href="admin/addcourse"> <button id="payment-button"  type="submit" class="btn btn-lg btn-info btn-block">
                                 <span id="payment-button-amount">Add Course</span>
                                 
-                            </button>
+                            </button></a>
                            </div>
                        </div>
                         <div class="row">
@@ -22,85 +22,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Java</td>
-                                                <td>CSE-102</td>
-                                                <td>Java OOP</td>
-                                                <td>1</td>
-                                              <td>
-                                          
-                                         <a href=" ">
-                                           <button type="button" class="btn btn-primary" >
-                                             <i class="fas fa-edit"></i>
-                                            </button>
-                                         </a> 
-                                          <a href="">
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </button>
-                                         </a>
-                                                </td>
-                                            </tr>
-                                             <tr>
-                                                <td>2</td>
-                                                <td>Java</td>
-                                                <td>CSE-102</td>
-                                                <td>Java OOP</td>
-                                                <td>1</td>
-                                                <td>
-                                                 <a href=" ">
-                                           <button type="button" class="btn btn-primary" >
-                                             <i class="fas fa-edit"></i>
-                                            </button>
-                                         </a> 
-                                          <a href="">
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </button>
-                                         </a> 
-                                                </td>
-                                            </tr>
+                                <?php
+                                  if(count((array)$viewcourse) > 0){
+                                      foreach ($viewcourse -> result() as $row) {
+                                        ?>
+                                          <tr>
+                                              <td><?php echo $row->course_id ?></td>
+                                              <td><?php echo $row->coursename ?></td>
+                                              <td><?php echo $row->courseno ?></td>
+                                              <td><?php echo $row->coursetitle ?></td>
+                                              <td><?php echo $row->courseimg ?></td>
+                                            
+                                               
+                                                <td>    
+                                                 <a href="">
+                                                   <button type="button" class="btn btn-primary" >
+                                                      <i class="fas fa-edit"></i>
+                                                    </button>
+                                                 </a> 
+                                                 <a href="<?=site_url("upload/delete/").$row->tech_id ?>">
+                                                    <button type="button" class="btn btn-danger">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </button>
+                                                 </a>
 
-                                             <tr>
-                                                <td>3</td>
-                                                <td>Java</td>
-                                                <td>CSE-102</td>
-                                                <td>Java OOP</td>
-                                                <td>1</td>
-                                                <td>
-                                                 <a href=" ">
-                                           <button type="button" class="btn btn-primary" >
-                                             <i class="fas fa-edit"></i>
-                                            </button>
-                                         </a> 
-                                          <a href="">
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </button>
-                                         </a> 
-                                                </td>
-                                            </tr>
+                                              </td>
+                                              
+                                          </tr>
+                                        <?php
+                                      }
 
-                                             <tr>
-                                                <td>4</td>
-                                                <td>Java</td>
-                                                <td>CSE-102</td>
-                                                <td>Java OOP</td>
-                                                <td>1</td>
-                                                <td>
-                                                 <a href=" ">
-                                           <button type="button" class="btn btn-primary" >
-                                             <i class="fas fa-edit"></i>
-                                            </button>
-                                         </a> 
-                                          <a href="">
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </button>
-                                         </a> 
-                                                </td>
-                                            </tr>
+                                  }
+                                ?>
+                                            
 
                                             
                                         </tbody>
@@ -109,4 +63,3 @@
                             </div>
                             
                         </div>
-                       

@@ -14,6 +14,6 @@
 			  $this->load->view('course',$data);
 	}
 
-	 
+	
 
 }

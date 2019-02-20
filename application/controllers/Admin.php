@@ -8,6 +8,7 @@
 		  parent:: __construct();
 		  $this->load->database();
 		  $this->load->Model("user_model");
+		  $this->load->model('Course_model','',true);
 		  $this->load->library("session");
 
 		  $admin = $this->session->userdata("admin");
@@ -19,13 +20,11 @@
 		}
 
 		 public function index(){
-		 	 // $data = array();
-		 	 // // $data['header'] = $this->load->view('admin/header','','true');
-		 	 // $data['sidebar'] = $this->load->view('admin/sidebar','','true');
-		 	 // // $data['header_desktop'] = $this->load->view('admin/header_desktop','','true');
-		 	
-		 	
-			$this->load->view('admin/desboard');
+		 	  $data = array();
+		 	  $data["viewcourse"] = $this->Course_model->viewcourse();
+		 	  $data['desboard_content'] = $this->load->view('admin/course','',true);
+		 
+			  $this->load->view('admin/desboard', $data);
 		 }
 		function logout(){
 
@@ -46,8 +45,12 @@
 			$this->load->view('admin/lessons');
 		}
 
+		public function addcourse(){
+			
+			  $this->load->view('admin/addcourse_view');
+			  $this->load->Course_model->addrecord();
+		}
 
-
-
+	
 		
 	}
