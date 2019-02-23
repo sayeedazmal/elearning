@@ -11,7 +11,7 @@
 			  $this->load->model('Course_model','',true);
 			  $this->load->library("session");
 			  $this->load->model('teacher_model','',true);
-			  $this->load->model('Uploadvideo','',true);
+			
 
 			 
 
@@ -172,11 +172,13 @@
 		 }
 
 		function video_page(){
+			
 			$this->load->view('admin/video');
+			
 		}
 
 		function savevideo(){
-
+			 $this->load->model('Uploadvideo');
 			$videoDetails = array();
 			$data = array();
 			$data['videotitle'] = $this->input->post('videotitle',true);
@@ -205,7 +207,7 @@
 
 					if($this->Uploadvideo->uploadData($data)){
 							$this->session->set_flashdata("success","New course has been added!");
-							redirect('admin/video_page');
+							redirect('admin/view_video');
 							}
 					}//if post is finished here
 
@@ -213,9 +215,13 @@
 					$data["headline"]=$data["title"]="Add New Course";
 					$data["action"]="add";
 							
-							redirect('admin/video_page');
-
-		                
+							redirect('admin/video_page');              
             
         }
+       function view_video(){
+       	   $this->load->model('Uploadvideo');
+       		$data = array();
+			$data['vdata'] = $this->Uploadvideo->video_data();
+			redirect('admin/video_page');
+       }
 }

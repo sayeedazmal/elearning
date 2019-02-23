@@ -10,4 +10,9 @@ class Uploadvideo extends CI_Model {
 		    
 		    $this->db->insert('video', $data);
 		}
+	public function video_data()
+		{
+		   $query = $this->db->get('video');
+		   return $query;
+		}
 }

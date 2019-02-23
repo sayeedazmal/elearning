@@ -37,75 +37,41 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      
-                                                <td>
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >Download</button>
-                                                 </a> 
 
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >
-                                                      Edit
-                                                    </button>
-                                                 </a> 
-                                                 <a href="">
-                                                    <button type="button" class="btn btn-danger">
-                                                        Delete
-                                                    </button>
-                                                 </a>
+        <?php 
 
-                                              </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      
-                                                 <td>
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >Download</button>
-                                                 </a> 
+          if($vdata->num_rows() > 0){
+              foreach ($vdata->result() as $rows) {
+                ?>
+                    <tr>
+                      <td><?php echo $rows->video_id ?></td>
+                      <td><?php echo $rows->videotitle ?></td>
+                      <td><?php echo $rows->video ?></td>
+                      
+                      <td>
+                                  <a href="">
+                                  <button type="button" class="btn btn-primary" >Download</button>
+                                  </a> 
 
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >
-                                                      Edit
-                                                    </button>
-                                                 </a> 
-                                                 <a href="">
-                                                    <button type="button" class="btn btn-danger">
-                                                        Delete
-                                                    </button>
-                                                 </a>
+                                  <a href="">
+                                    <button type="button" class="btn btn-primary" >
+                                    Edit
+                                     </button>
+                                  </a> 
+                                  <a href="">
+                                    <button type="button" class="btn btn-danger">
+                                      Delete
+                                    </button>
+                                  </a>
 
-                                              </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      
-                                                <td>
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >Download</button>
-                                                 </a> 
-
-                                                 <a href="">
-                                                   <button type="button" class="btn btn-primary" >
-                                                      Edit
-                                                    </button>
-                                                 </a> 
-                                                 <a href="">
-                                                    <button type="button" class="btn btn-danger">
-                                                        Delete
-                                                    </button>
-                                                 </a>
-
-                                              </td>
-		    </tr>
+                              </td>
+                    </tr>
+      
+                <?php
+              }
+          }
+        ?>
+		  
 		  </tbody>
 		</table>
   </div>
