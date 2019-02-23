@@ -22,9 +22,9 @@
                     <div class="container">
                        <div class="row">
         					        <div class="col-lg-2">
-        					           <a href="addteacher"> <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block"></a>
-        					            <span id="payment-button-amount">Add Teacher</span>
-        					            </button>
+        					           <a href="addteacher"> <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+        					            <span id="payment-button-amount">Add</span>
+        					            </button></a>
         					        </div>
     					         </div>
                         <div class="row">
@@ -44,7 +44,7 @@
                                      
             
                 <?php
-                   if(count($teacher_data_view) > 0){
+                   if( $teacher_data_view->num_rows()> 0){
                       foreach ($teacher_data_view->result() as $row) {
                       ?>
                       <tr>
@@ -60,7 +60,7 @@
                               <a href=""><button type="button" class="btn btn-primary" >
                               <i class="fas fa-edit"></i></button>
                               </a> 
-                              <a href="<?=site_url('admin/delete').$row->tech_id; ?>">
+                              <a href="<?=site_url('admin/delete/').$row->tech_id; ?>">
                                   <button type="button" class="btn btn-danger">
                                  <i class="fa fa-trash" aria-hidden="true"></i></button>  
                               </a>

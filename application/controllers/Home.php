@@ -8,14 +8,9 @@
 		{
 			  $data = array();
 			 
-			  $data['header_content'] = $this->load->view('pages/header','',true);
-			  $data['course_content'] = $this->load->view('pages/course','',true);
-			  $data['register_content'] = $this->load->view('pages/register','',true);
-			  $data['service_content'] = $this->load->view('pages/service','',true);
-			  $data['testmonial_content'] = $this->load->view('pages/testmonial','',true);
-			  $data['event_content'] = $this->load->view('pages/events','',true);
-			  $data['footer_content'] = $this->load->view('pages/footer','',true);
-
+			  $data['slide'] = $this->load->view('pages/homeslide','', true);
+			  $data['main_content'] = $this->load->view('pages/home','',true);
+			 
 			  $this->load->view('index',$data);
 		}
 

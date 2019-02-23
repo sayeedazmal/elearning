@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Course</title>
+<title>lesson</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Course Project">
@@ -16,40 +17,43 @@
 </head>
 <body>
 
-    
 
     <!-- Register -->
-<div class="row">
-    
-    <div class="register">
-
-        <div class="container-fluid">
+        <div class="row">
             
-            <div class="row row-eq-height">
-                <div class="col-lg-12 nopadding">
+            <div class="register">
+
+                <div class="container">
                     
-                    <!-- Search -->
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 nopadding">
+                            
+                            <!-- Search -->
 
-                    <div class="search_section d-flex flex-column align-items-center justify-content-center">
-                        <div class="search_background" style="background-image:url(<?php echo base_url()?>assets/images/search_background.jpg);"></div>
-                        <div class="search_content text-center" style="margin-top: 100px">
-                             <form id="search_form" class="search_form" action="post" style="margin: 50px 0px">
-                                <input id="lesson_name" class="input_field search_form_name" type="text" placeholder="lesson name" required="required" data-error="lesson name is required.">
-                                <input id="lesson_title" class="input_field search_form_category" type="text" placeholder="lesson title">
-                                <input id="description" class="input_field search_form_degree" type="text" placeholder="lesson description">
-                                <input id="video" class="input_field search_form_degree" type="text" placeholder="video">
-                                <input id="link" class="input_field search_form_degree" type="text" placeholder="link">
-                                <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
-                            </form>
-                        </div> 
+                            <div class="search_section d-flex flex-column align-items-center justify-content-center" style="margin: 100px 300px">
+                                <div class="search_background" style="background-image:url(<?php echo base_url()?>assets/images/search_background.jpg); "></div>
+                                <div class="search_content text-center" style="margin-top: 100px">
+                                    <h1 class="search_title">ADD LESSON</h1>
+                                     <form method="POST" id="search_form" class="search_form" action="<?=site_url('admin/savelessons')?>" enctype="multipart/form-data" >
+
+                                        <input id="lesson-name" name="lessonname" class="input_field search_form_name" type="text" placeholder="lesson name" required="required" data-error="lesson name is required.">
+                                        <input id="lession-title" name="lessontitle" class="input_field search_form_category" type="text" placeholder="lesson title">
+                                        <input id="link" class="input_field search_form_degree" type="link" name="link" placeholder="link" size="20">
+                                        <label style="margin-right: 400px"><b>Lesson Description</b></label>
+                                        <textarea class="input_field search_form_degree" name='desc'></textarea>
+                                        
+                                        <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
+                                    </form>
+                                </div> 
+                            </div>
+
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
-    
+                
+    </body>
 
     
 <script src="<?php echo base_url()?>assets/js/jquery-3.2.1.min.js"></script>
@@ -64,6 +68,10 @@
 <script src="<?php echo base_url()?>assets/plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="<?php echo base_url()?>assets/plugins/easing/easing.js"></script>
 <script src="<?php echo base_url()?>assets/js/custom.js"></script>
+<script src="//cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'desc' );
+</script>
 
 </body>
 </html>

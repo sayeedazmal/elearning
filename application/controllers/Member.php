@@ -12,7 +12,8 @@
 
 		 
 		  }
-		  	 function adminlogin(){
+		  
+		  function adminlogin(){
 
 		  $admin = $this->session->userdata("admin");
 		  $session = $this->session->userdata("session");

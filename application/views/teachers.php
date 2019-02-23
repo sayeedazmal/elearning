@@ -18,44 +18,7 @@
 	<!-- Header -->
   <?php echo $header_content?>
 	
-	<!-- Menu -->
-	<div class="menu_container menu_mm">
-
-		<!-- Menu Close Button -->
-		<div class="menu_close_container">
-			<div class="menu_close"></div>
-		</div>
-
-		<!-- Menu Items -->
-		<div class="menu_inner menu_mm">
-			<div class="menu menu_mm">
-				<ul class="menu_list menu_mm">
-					<li class="menu_item menu_mm"><a href="index.html">Home</a></li>
-					<li class="menu_item menu_mm"><a href="about.html">About us</a></li>
-					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
-					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
-				</ul>
-
-				<!-- Menu Social -->
-				
-				<div class="menu_social_container menu_mm">
-					<ul class="menu_social menu_mm">
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
-
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
-			</div>
-
-		</div>
-
-	</div>
+	
 	
 	<!-- Home -->
 
@@ -73,144 +36,36 @@
 	<div class="teachers page_section">
 		<div class="container">
 			<div class="row">
+				<?php 
+
+				 	if($teacher_data_view->num_rows() > 0){
+				 		foreach ($teacher_data_view->result() as $row) {
+				 			?>
+				<!-- Teacher -->
+				   <div class="col-lg-4 teacher">
+				 
+					 		<div class="card">
+							<div class="card_img">
+							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
+							<img class="card-img-top trans_200" style="height:250px;" src="<?php echo base_url("".$row->picture)?>" >
+							</div>
+							<div class="card-body text-center">
+								<div class="card-title"><a href=""><?php echo $row->techname?></a></div>
+								<div class="card-text"><?php echo $row->designation?></div>
+							</div>
+						</div>
+
+					
+				 	</div>	
+
+				 	<?php
+				 		}
+
+				 	}
+
+				?>
+
 				
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_1.jpg" alt="https://unsplash.com/@michaeldam">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">Maria Smith</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_2.jpg" alt="https://unsplash.com/@jcpeacock">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">Christian Blue</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_3.jpg" alt="https://unsplash.com/photos/n8jeOSxCRfQ">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">James Brown</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_4.jpg" alt="https://unsplash.com/@seteales">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">Julie Denver</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_5.jpg" alt="https://unsplash.com/@jaredsluyter">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">Julie Denver</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Teacher -->
-				<div class="col-lg-4 teacher">
-					<div class="card">
-						<div class="card_img">
-							<div class="card_plus trans_200 text-center"><a href="#">+</a></div>
-							<img class="card-img-top trans_200" src="<?php echo base_url()?>assets/images/teacher_6.jpg" alt="https://unsplash.com/@mehdizadeh">
-						</div>
-						<div class="card-body text-center">
-							<div class="card-title"><a href="#">Julie Denver</a></div>
-							<div class="card-text">Graphic Designer</div>
-							<div class="teacher_social">
-								<ul class="menu_social">
-									<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
 
 			</div>
 		</div>

@@ -80,9 +80,16 @@
                             <a href="<?=site_url('admin/viewlesson')?>">
                                 <i class="fas fa-table"></i>Lessons</a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Video</a>
+                         <li>  
+                            <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Resourse
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="video_page"><i class="fas fa-calendar-alt"></i>Video</a>
+                                <a class="dropdown-item" href="admin/video_page"> <i class="fas fa-table"></i>File</a>
+                              </div>
+                            </div>
                         </li>
                         <li>
                             <a href="#">
@@ -92,10 +99,13 @@
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Announce</a>
                         </li>
+                       
                         <li>
-                            <a href="viewteacher">
+                            <a href="<?=site_url('admin/viewteacher')?>">
                                 <i class="fas fa-map-marker-alt"></i>Add Teacher</a>
                         </li>
+                        
+
                        
                        
                     </ul>

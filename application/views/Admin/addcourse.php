@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>teacher</title>
+<title>course</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Course Project">
@@ -30,17 +30,17 @@
 					
 					<!-- Search -->
 
-					<div class="search_section d-flex flex-column align-items-center justify-content-center">
+					<div class="search_section d-flex flex-column align-items-center justify-content-center" style="margin: 100px 300px">
 						<div class="search_background" style="background-image:url(<?php echo base_url()?>assets/images/search_background.jpg);"></div>
 						<div class="search_content text-center" style="margin-top: 100px">
-							<h1 class="search_title">Please continue your Registration</h1>
-							 <form method="POST" id="search_form" class="search_form" action="" enctype="multipart/form-data" >
+							<h1 class="search_title">ADD COURSE</h1>
+							 <form method="POST" id="search_form" class="search_form" action="<?=site_url('admin/savecourse')?>" enctype="multipart/form-data" >
 
 								<input id="course-name" name="coursename" class="input_field search_form_name" type="text" placeholder="course name" required="required" data-error="Course name is required.">
 								<input id="corse-no" name="courseno" class="input_field search_form_category" type="text" placeholder="course no">
 								<input id="course-title" name="coursetitle" class="input_field search_form_category" type="text" placeholder="course title">
 
-								<input id="file" class="input_field search_form_degree" type="file" name="img" size="20">
+								<input id="file" class="input_field search_form_degree" type="file" name="courseimg" size="20">
 								
 								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
 							</form>

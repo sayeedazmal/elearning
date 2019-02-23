@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +17,8 @@
 <body>
 
 
-	<!-- Register -->
-<div class="row" style="margin: 200px,100px">
+
+<div class="row">
 	
 	<div class="register">
 
@@ -34,11 +33,18 @@
 						<div class="search_background" style="background-image:url(<?php echo base_url()?>assets/images/search_background.jpg);"></div>
 						<div class="search_content text-center" style="margin-top: 100px">
 							<h1 class="search_title">Please continue your Registration</h1>
-							 <form method="POST"  class="search_form" action="<?=site_url("upload/do_upload");?>" enctype="multipart/form-data" >
+							 <form method="POST" id="search_form" class="search_form" action="" enctype="multipart/form-data" >
 
-								<input id="techer-name" name="techname" class="input_field search_form_name" type="text" placeholder="techer name" required="required" data-error="Course name is required.">
-								<input id="designation" name="designation" class="input_field search_form_category" type="text" placeholder="designation">
-								<input id="file" class="input_field search_form_degree" type="file" name="picture" size="20">
+
+
+								<input <?php echo form_input(['name' => 'coursename', 'id' => 'coursename','class' => 'input_field search_form_name' ], set_value('coursename',(isset($row->coursename)? $row->coursename:"")))?> >
+
+								<input <?php echo form_input(['name' => 'courseno', 'id' => 'courseno','class' => 'input_field search_form_name' ], set_value('courseno',(isset($row->courseno)? $row->courseno:"")))?> >
+
+								<input <?php echo form_input(['name' => 'coursetitle', 'id' => 'coursetitle','class' => 'input_field search_form_name' ], set_value('coursetitle',(isset($row->coursetitle)? $row->coursetitle:"")))?> >
+
+								<input <?php echo form_input(['name' => 'courseimg', 'id' => 'courseimg','class' => 'input_field search_form_name' ], set_value('courseimg',(isset($row->courseimg)? $row->courseimg:"")))?> >
+
 								
 								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
 							</form>
@@ -50,10 +56,9 @@
 		</div>
 	</div>
 </div>
-    	
-</body>
 
-    
+
+   
 <script src="<?php echo base_url()?>assets/js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo base_url()?>assets/styles/bootstrap4/popper.js"></script>
 <script src="<?php echo base_url()?>assets/styles/bootstrap4/bootstrap.min.js"></script>

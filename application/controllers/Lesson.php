@@ -14,7 +14,5 @@
 			  $this->load->view('lessons',$data);
 	}
 	
-	function addlesson(){
-		$this->load->view('admin/addlesson');
-	}
+	
 }

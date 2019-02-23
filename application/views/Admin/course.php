@@ -1,6 +1,6 @@
                 <div class="row">
                          <div class="col-lg-2">
-                           <a href="addcourse"> <button id="payment-button"  type="submit" class="btn btn-lg btn-info btn-block">
+                           <a href="add_course"> <button id="payment-button"  type="submit" class="btn btn-lg btn-info btn-block">
                                 <span id="payment-button-amount">Add Course</span>
                                 
                             </button></a>
@@ -22,25 +22,32 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                <?php
-                                  if(count((array)$viewcourse) > 0){
-                                      foreach ($viewcourse -> result() as $row) {
+                            <?php
+                                  if($course_data->num_rows() > 0){
+                                      foreach ($course_data -> result() as $row) {
                                         ?>
                                           <tr>
                                               <td><?php echo $row->course_id ?></td>
                                               <td><?php echo $row->coursename ?></td>
                                               <td><?php echo $row->courseno ?></td>
                                               <td><?php echo $row->coursetitle ?></td>
-                                              <td><?php echo $row->courseimg ?></td>
+                                              <td>
+
+                                                <img src="<?php echo base_url("".$row->courseimg)?>" style="width: 100px; height: 100px">
+                                              </td>
                                             
                                                
-                                                <td>    
-                                                 <a href="">
+                                                <td>
+                                                 <a href="<?php echo base_url("admin/add_lesson/").$row->course_id; ?>">
+                                                   <button type="button" class="btn btn-primary" >Add Lesson</button>
+                                                 </a> 
+
+                                                 <a href="<?=site_url("course/edit/").$row->course_id ?>">
                                                    <button type="button" class="btn btn-primary" >
                                                       <i class="fas fa-edit"></i>
                                                     </button>
                                                  </a> 
-                                                 <a href="<?=site_url("upload/delete/").$row->tech_id ?>">
+                                                 <a href="<?=site_url('admin/course_delete/').$row->course_id; ?>">
                                                     <button type="button" class="btn btn-danger">
                                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                                     </button>
@@ -55,7 +62,6 @@
                                   }
                                 ?>
                                             
-
                                             
                                         </tbody>
                                     </table>
