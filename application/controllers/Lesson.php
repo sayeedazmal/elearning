@@ -13,6 +13,15 @@
 
 			  $this->load->view('lessons',$data);
 	}
+	public function videoes(){
+
+			$this->load->model('Uploadvideo','',true);
+			  $data = array();
+			  $data['catchvideo'] = $this->Uploadvideo->video_data();
+			  $data['slide'] = $this->load->view('pages/courseslide','',true);
+			  $data['main_content'] = $this->load->view('video','',true);
+			  $this->load->view('index',$data);
+	}
 	
 	
 }
